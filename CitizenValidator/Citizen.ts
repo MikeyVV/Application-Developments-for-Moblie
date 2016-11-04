@@ -8,7 +8,8 @@ module Citizen {
           idNumber[i]  = Number(idString[i])
             idSum += idNumber[i]*k
       }
-      return 11 - (idSum%11) === Number(idString[idString.length-1])
+      return Math.abs((11 - (idSum%11))%10) === Number(idString[12])
     }
 }
 export = Citizen
+
