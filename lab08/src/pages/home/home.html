@@ -1,14 +1,33 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Contacts
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addContact()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let contact of list; let i = index;">
+      <ion-item detail-push (click)="goNextPage(contact)">
+        <ion-thumbnail item-left>
+          <img src="../../assets/img/photo-1476770695358-0f31dff68d45.jpg">
+        </ion-thumbnail>
+        <h2>{{contact.FName}} {{contact.LName}}</h2>
+        <p>{{contact.Moblie_Phone}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <!--<button ion-button color="danger" (click)="remove(i)">-->
+        <button ion-button color="danger" (click)="remove(contact.id)">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
