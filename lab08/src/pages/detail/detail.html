@@ -9,7 +9,9 @@
 
 <ion-content>
     <ion-card>
+        <div style="height: 70vh; overflow: hidden;">
         <img [src]="image" (click)="chooseMedia()"/>
+        </div>
         <ion-card-content>
             <div style="float: left;">
                 <ion-card-title>
@@ -25,7 +27,7 @@
             </div>
         </ion-card-content>
     </ion-card>
-    <div class="button-center">
+    <!--<div class="button-center">
         <button ion-button color="danger" (click)="goBack()">Back</button>
-    </div>
+    </div>-->
 </ion-content>
