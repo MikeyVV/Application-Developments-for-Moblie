@@ -1,0 +1,25 @@
+<!--
+  Generated template for the Result page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{weather.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="text-align: center ;" class="display-img">
+  <ion-card style="padding-top: 7%; padding-bottom: 7%;">
+    <h1 style="font-size: 7em; display: inline; vertical-align: top; color:#4c4c4c;">{{weather.main.temp}}</h1><span style="font-size: 4em;color:#4c4c4c;">℃</span>
+    <div class="weather-detail">
+      <h1>{{weather.name}}</h1>
+      <h1>{{weather.weather[0].description}}</h1>
+    </div>
+    <button ion-button style="width: 50%;" color="dark" (click)="saveWeather()" outline>{{status}}</button>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,29 @@
+<!--<ion-header>
+  <ion-navbar>
+    <ion-title>
+      How are you?
+    </ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+<ion-content padding class="display-img">
+  <ion-grid>
+    <ion-row wrap class="text-center" style="margin-top: 20vh;">
+      <ion-card>
+      <ion-col style="padding: 3vh;">
+        <ion-card-header>
+          <h1 class="logo-app">Weather right now</h1>
+          </ion-card-header>
+          
+          <ion-list>
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="user_txt" placeholder="city or country"></ion-input>
+            </ion-item>
+          </ion-list>
+          <button ion-button (click)="getWeather()" block>{{status}}</button>
+           <button ion-button (click)="goToFav()" color="light" block>{{fav_status}}</button>
+      </ion-col>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

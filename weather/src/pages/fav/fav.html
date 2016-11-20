@@ -1,0 +1,40 @@
+<!--
+  Generated template for the Fav page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Favorite Weather</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background-color: #ececec;">
+
+
+
+  <ion-card *ngFor="let fav of fav; let i = index;">
+    <ion-list>
+      <ion-item-sliding>
+        <ion-item>
+          <ion-card-header>
+            {{fav.city}}
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{fav.temp}}℃ {{fav.desc}}</p>
+            <p>{{fav.created_at}}</p>
+          </ion-card-content>
+        </ion-item>
+        <ion-item-options>
+          <button ion-button color="danger" (click)="removeWeather(fav.id)"><ion-icon name="trash"></ion-icon>Delete</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-card>
+
+
+</ion-content>
